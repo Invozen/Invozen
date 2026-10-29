@@ -1,0 +1,340 @@
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, Arial, sans-serif;
+  color: #202938;
+  background: #f3f5f9;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #f3f5f9;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.app {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #18253a;
+}
+
+.header p {
+  margin: 7px 0 0;
+  color: #738096;
+}
+
+.status {
+  background: #dcfce7;
+  color: #166534;
+  padding: 9px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.bill-info,
+.form-grid,
+.bottom-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.bill-info {
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e2e7ef;
+  border-radius: 12px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: #465268;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.bill-info label {
+  margin-bottom: 0;
+}
+
+input,
+select {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  padding: 10px 12px;
+  color: #202938;
+  background: #fff;
+  border: 1px solid #d9e0ea;
+  border-radius: 7px;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input:focus,
+select:focus {
+  border-color: #3568dc;
+  box-shadow: 0 0 0 3px rgb(53 104 220 / 12%);
+}
+
+input::placeholder {
+  color: #9aa4b4;
+}
+
+.panel {
+  min-width: 0;
+  margin-top: 20px;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #e2e7ef;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgb(28 42 65 / 3%);
+}
+
+.panel h2 {
+  margin: 0 0 20px;
+  color: #202d42;
+  font-size: 18px;
+}
+
+.form-grid {
+  column-gap: 20px;
+  row-gap: 0;
+}
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #e8ecf2;
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  color: #526077;
+  background: #f6f8fc;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+td {
+  font-size: 13px;
+}
+
+td input {
+  min-width: 85px;
+}
+
+button {
+  min-height: 40px;
+  margin: 10px 8px 0 0;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+.primary-button {
+  color: #fff;
+  background: #2459d3;
+}
+
+.primary-button:hover {
+  background: #1947b3;
+}
+
+.secondary-button {
+  color: #35445b;
+  background: #edf1f7;
+}
+
+.secondary-button:hover {
+  background: #e0e7f1;
+}
+
+.bottom-grid {
+  align-items: start;
+  gap: 20px;
+}
+
+.bottom-grid .panel {
+  margin-top: 20px;
+}
+
+.total-panel > input {
+  margin-bottom: 12px;
+}
+
+.hint {
+  color: #78859a;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.total-panel p {
+  color: #536176;
+  font-size: 14px;
+}
+
+.total-panel hr {
+  margin: 18px 0;
+  border: 0;
+  border-top: 1px solid #e6eaf1;
+}
+
+.grand-total {
+  padding-top: 16px;
+  border-top: 1px solid #e6eaf1;
+  color: #1747ad !important;
+  font-size: 22px !important;
+  line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+  .app {
+    padding: 14px;
+  }
+
+  .header h1 {
+    font-size: 23px;
+  }
+
+  .bill-info,
+  .form-grid,
+  .bottom-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .bill-info {
+    gap: 16px;
+  }
+
+  .panel {
+    padding: 16px;
+  }
+
+  .bottom-grid {
+    gap: 0;
+  }
+}
+.top-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.top-grid > .product-list-panel {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+
+
+@media (max-width: 760px) {
+  .top-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+
+/* Main billing layout */
+.billing-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(320px, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.billing-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+/* Remove default panel spacing inside the left column */
+.billing-left > .panel {
+  margin-top: 20px;
+}
+
+/* Product list occupies the right column */
+.billing-layout > .product-list-panel {
+  width: 100%;
+  min-width: 0;
+  margin-top: 20px;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.product-list-panel input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.product-list-table {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+}
+
+.product-list-table th,
+.product-list-table td {
+  padding: 10px 8px;
+  overflow-wrap: anywhere;
+}
+
+/* Responsive layout */
+@media (max-width: 760px) {
+  .billing-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
