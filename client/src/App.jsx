@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import "./App.css";
 
 import Header from "./components/Header";
@@ -8,17 +9,27 @@ import ProductList from "./components/ProductList";
 import DiscountGST from "./components/DiscountGST";
 
 function App() {
+  const [theme, setTheme] = useState("light");
+  const [subtotal, setSubtotal] = useState(0);
+
   return (
-    <div className="app">
-      <Header />
+    <div className="app" data-theme={theme}>
+      <Header
+        theme={theme}
+        onToggleTheme={() =>
+          setTheme((currentTheme) =>
+            currentTheme === "light" ? "dark" : "light"
+          )
+        }
+      />
 
       <div className="billing-layout">
         <div className="billing-left">
           <CustomerDetails />
 
-          <BillingTable />
+          <BillingTable onSubtotalChange={setSubtotal} />
 
-          <DiscountGST />
+          <DiscountGST subtotal={subtotal} />
         </div>
 
         <ProductList />

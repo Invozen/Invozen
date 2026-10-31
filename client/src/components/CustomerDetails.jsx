@@ -1,6 +1,6 @@
 function CustomerDetails() {
   return (
-    <section className="panel">
+    <section className="panel customer-details-panel">
       <h2>Customer Details</h2>
 
       <div className="customer-fields">
